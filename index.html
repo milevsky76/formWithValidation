@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML-Форма с Валидацией</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <script src="main.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML-Форма с Валидацией</title>
+	<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container py-3">
+		<div class="row justify-content-center">
+			<div class="col-md-8 col-lg-6">
+				<div class="card">
+					<div class="card-body">
+						<form id="form">
+							<fieldset class="form-group">
+								<legend class="form-subtitle">Личная информация</legend>
+								<div class="mb-3">
+									<label class="form-label" for="name">Имя:</label>
+									<input class="form-control" id="name" name="name" type="text" placeholder="Имя" required>
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label" for="email">Email:</label>
+									<input class="form-control" id="email" name="email" type="email" pattern="^\S+@\S+\.\S+$"
+										placeholder="example@example.com" required>
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label" for="phone">Телефон:</label>
+									<input class="form-control" id="phone" name="phone" type="tel"
+										pattern="^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$" placeholder="+375 (99) 999-99-99" required>
+								</div>
+							</fieldset>
+
+							<fieldset class="form-group">
+								<legend class="form-subtitle">Информация о бизнесе</legend>
+								<div class="mb-3">
+									<label class="form-label" for="expected-turnover">Ожидаемый оборот:</label>
+									<input class="form-control" id="expected-turnover" name="expected-turnover" type="number" step="0.1"
+										placeholder="1,5" required>
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label" for="industry">Выбор индустрии:</label>
+									<select class="form-select" id="industry" name="industry" required>
+										<option value="">Выберите индустрию</option>
+										<option value="industry1">Индустрия 1</option>
+										<option value="industry2">Индустрия 2</option>
+										<option value="industry3">Индустрия 3</option>
+									</select>
+								</div>
+
+								<div class="mb-3 form-check">
+									<input class="form-check-input" id="accept-rules" name="accept-rules" type="checkbox" required>
+									<label class="form-check-label" for="accept-rules">Я принимаю <a href="/rules/"
+											target="_blank">правила</a> сервиса</label>
+								</div>
+							</fieldset>
+
+							<div class="row justify-content-end">
+								<div class="col-auto">
+									<button class="btn btn-submit" type="submit">Отправить</button>
+								</div>
+							</div>
+						</form>
+
+						<div class="alert alert-light success-message" role="alert">
+							Спасибо! Ваша заявка принята.
+						</div>
+
+						<div class="alert alert-danger error-message" role="alert">
+							Произошла ошибка. Пожалуйста, попробуйте позже.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="./node_modules/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+	<script src="./js/main.js"></script>
 </body>
+
 </html>
