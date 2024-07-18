@@ -80,8 +80,8 @@ $(function () {
 
 function getRandomResponseStatus() {
 	const statuses = {
-		200: "https://run.mocky.io/v3/4f8c1c20-b62d-4263-aa1b-8f68e67e968e",
-		400: "https://run.mocky.io/v3/6fe4df22-25f2-4763-a76a-ec7e123d256d"
+		200: "https://run.mocky.io/v3/c33554ac-999f-4260-9977-d88769381c4f",
+		400: "https://run.mocky.io/v3/2079912e-35c8-471a-accd-5d0a65064ac2"
 	};
 
 	return statuses[200];
